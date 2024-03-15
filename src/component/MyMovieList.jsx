@@ -13,7 +13,7 @@ class MyMovieList extends Component {
 
     fetchMovies = () => {
     const { query } = this.props;
-    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=b7a71124&s=${query}`)
+    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=b7a71124&s=harry%20potter`)
         .then((response) => {
             if (response.ok) {
                 return response.json();
