@@ -1,4 +1,5 @@
 import Col from "react-bootstrap/Col";
+import React from "react";
 
 const MySingleMovie = (props) => {
     return (
