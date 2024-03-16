@@ -53,7 +53,7 @@ function MyFooter(){
                 </div>
                 <div className="col-3">
                     <p>Audio Description</p>
-                    <p>Investor Realtions</p>
+                    <p>Investor Relations</p>
                     <p>Legal Notice</p>
                 </div>
         

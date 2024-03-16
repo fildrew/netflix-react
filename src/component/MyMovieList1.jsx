@@ -45,7 +45,7 @@ class MyMovieList1 extends Component {
                 <Container fluid className="px-5 mt-4">
                     <div>
                         <h2 className="text-white me-4">Harry Potter</h2>
-                        <Row xs={2} sm={2} lg={3} xl={6}>
+                        <Row xs={1} sm={2} lg={3} xl={6}>
                             {firstsix.slice(0,6).map((movie)=> (
                                 <Col key={movie.imdbID} className="mb-2 px-1 col-img text-center">
                                     <MySingleMovie key={movie.imdbID} movie={movie} /> 
