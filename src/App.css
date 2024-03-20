@@ -1,11 +1,6 @@
-.App {
-  text-align: center;
+.scale:hover {
+  scale: 1.1;
+  transition: scale 0.5s ease;
 }
 
-.col img {
-  transition: transform 0.3s ease;
-}
-.col img:hover {
-  transform: scale(1.1);
-}
 
