@@ -35,7 +35,7 @@ function Moviedetails() {
     useEffect(() => {
         film();
     }, []);
-    
+
     return (
         <>
             <Container fluid>
