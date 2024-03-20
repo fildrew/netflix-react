@@ -1,26 +1,37 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import './App.css';
+import "./App.css";
 import MyNavbar from "./component/MyNavbar";
+import "bootstrap/dist/css/bootstrap.min.css";
 import MyFooter from "./component/MyFooter";
-import { Container } from "react-bootstrap";
+import MyMovieList from "./component/MyMovieList";
 import MyTVShow from "./component/MyTVShow";
-import MyMovieList1 from "./component/MyMovieList1";
-import MyMovieList2 from "./component/MyMovieList2";
-import MyMovieList3 from "./component/MyMovieList3";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Moviesdetails from "./component/Moviesdetails";
+
 function App() {
   return (
-    <div className="bg-dark text-white">
-      <Container fluid>
-        <MyNavbar/>
-        <Container fluid>
-          <MyTVShow/>
-          <MyMovieList1/>
-          <MyMovieList2/>
-          <MyMovieList3/>
-          <MyFooter/>
-        </Container>
-      </Container>
-    </div>
+    <>
+      <BrowserRouter>
+        <header>
+          <MyNavbar />
+        </header>
+
+        <main className=" container-fluid text-bg-dark">
+          <Routes>
+            <Route path="/" element={<MyMovieList/>} />
+            <Route path="/TVShow" element={<MyTVShow />} />
+            <Route
+              path="/Moviedetails/:movieid"
+              element={<Moviesdetails />}
+            />
+            <Route path="*" element={<h1>404</h1>} />
+          </Routes>
+        </main>
+
+        <footer className=" container-fluid text-bg-dark pt-5">
+          <MyFooter />
+        </footer>
+      </BrowserRouter>
+    </>
   );
 }
 

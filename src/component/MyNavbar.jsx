@@ -3,19 +3,39 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import { Link,useLocation } from "react-router-dom";
+
 function MyNavbar () {
-    return (
-      <Navbar expand="lg"  data-bs-theme="dark">
+  const location = useLocation();
+  return (
+      <Navbar expand="lg" bg="dark"  data-bs-theme="dark">
       <Container fluid>
         <Navbar.Brand href="#home">
-          <img src="netflix_logo.png" alt="logo" style={{ width: "100px",height:"50px" }} />
+          <img 
+              src="netflix_logo.png" 
+              alt="logo" 
+              style={{ width: "120px",height:"50px" }}
+              loading="lazy"
+              className="d-inline-block align-top"
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="d-flex">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#tv-shows">TV Shows</Nav.Link>
-            <Nav.Link href="#movies">Movies</Nav.Link>
+            <Link
+                to="/TVShow"
+                className={
+                  location.pathname === "/TVShow"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                Movies
+              </Link>
             <Nav.Link href="#recently-added">Recently Added</Nav.Link>
             <Nav.Link href="#my-list">MyList</Nav.Link>
           </Nav>
@@ -60,4 +80,4 @@ function MyNavbar () {
     </Navbar>
   );
 }
-export default MyNavbar;
+export default MyNavbar; 
