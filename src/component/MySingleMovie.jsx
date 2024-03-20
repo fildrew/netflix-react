@@ -38,9 +38,9 @@ const MySingleMovie = (props) => {
                     xs={12}
                     sm={4}
                     md={3}
-                    lg={6}
+                    lg={2}
                     xl={2} 
-                    className="p-3"
+                    className="p-2"
                     key={film.imdbID}
                 >
                     <Link
